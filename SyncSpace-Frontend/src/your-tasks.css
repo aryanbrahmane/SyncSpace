@@ -1,0 +1,422 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h2 {
+    font-size: 2.8rem;
+    color: #07065e;
+    font-weight: 700;
+    margin: 0;
+}
+
+.home-icon img {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.home-icon img:hover {
+    transform: scale(1.1);
+}
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 40px; /* Add more gap between the sections */
+    padding: 20px; /* Add padding to the main content */
+    border-radius: 10px; /* Round the corners of the main content */
+}
+
+/* 1st Section: Tasks Calendar */
+.tasks-calendar {
+    width: 40%; /* Keep the smaller width for tasks calendar */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+}
+
+.quick-tasks {
+    width: 55%; /* Maintain the width for quick tasks section */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tasks-calendar h2, .quick-tasks h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#calendar {
+    margin-top: 20px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border: 2px dashed #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 1.4rem;
+}
+
+/* 2nd Section: Quick Tasks Form */
+.quick-task-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.quick-task-section form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Quick Task Section Styling */
+.quick-task-section .task-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; /* Set max height to restrict the list height */
+    overflow-y: auto;  /* Enable vertical scrollbar if task list exceeds max height */
+}
+
+.quick-task-section .task-list::-webkit-scrollbar {
+    width: 8px; /* Set width of scrollbar */
+}
+
+.quick-task-section .task-list::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Scrollbar color */
+    border-radius: 4px;
+}
+
+.quick-task-section .task-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track color */
+}
+
+.quick-task-section .task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Ensure task items have rounded corners */
+    background-color: #e9e7e7;
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.quick-task-section .task-list li:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+}
+
+.quick-task-section .task-list li input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.quick-task-section .task-list li input[type="date"] {
+    margin-left: 10px;
+}
+
+
+
+/* Task Icons Styling */
+.task-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.task-icons i {
+    font-size: 1.5rem;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.task-icons i:hover {
+    color: #0056b3;
+}
+
+/* Task Text */
+.task-item span {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+.add-task-btn {
+    background-color: #007bff; /* Blue color for the button */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for better touch area */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.add-task-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+
+/* 3rd Section: Task Folders */
+/* Folder Section */
+.task-folders {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px; /* Limit height to show up to 3 folders initially */
+    overflow-y: auto;  /* Enable vertical scrolling if there are more folders */
+}
+
+/* Customize scrollbar appearance for folders */
+.task-folders::-webkit-scrollbar {
+    width: 10px;
+}
+
+.task-folders::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.task-folders::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+
+
+.task-folders h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.folder {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.folder:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01); /* Slight scale up effect on hover */
+}
+
+.folder h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    display: inline-block;
+    width: 70%;
+}
+
+.folder p {
+    margin-top: 10px;
+    color: #555;
+}
+
+#taskFolders {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between folders */
+    flex-grow: 1;
+}
+
+/* Folder Banner */
+.folder-banner {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.folder-task-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.folder-task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* Adjust folder task list items for proper alignment */
+.folder-task-list li {
+    display: flex;
+    align-items: center; /* Ensures the text and icons are vertically aligned */
+    justify-content: space-between; /* Ensures space between the task text and the icons */
+    background-color: #e9e7e7;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+/* Adjust task text and icons within folder task items */
+.folder-task-list li .task-text {
+    flex-grow: 1;
+    margin-right: 10px; /* Add some space between the task text and the icons */
+}
+
+.folder-task-list li .task-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.folder-task-list li .task-icons i {
+    font-size: 1.2rem;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.folder-task-list li .task-icons i:hover {
+    color: #0056b3;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.progress-fill {
+    background-color: #007bff;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+
+/* Folder Task Buttons Alignment */
+.edit-btn, .add-banner-btn, .remove-banner-btn, .delete-folder-btn {
+    display: inline-block;
+    margin-top: 10px; /* Add some space between the buttons */
+    margin-right: 10px; /* Add spacing between buttons */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem; /* Adjust font size for consistency */
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #28a745; /* Green for edit */
+}
+
+.add-banner-btn {
+    background-color: #007bff; /* Blue for add banner */
+}
+
+.remove-banner-btn {
+    background-color: #dc3545; /* Red for remove banner */
+}
+
+.delete-folder-btn {
+    background-color: #dc3545; /* Red for delete folder */
+    opacity: 1;  /* Ensure visibility */
+    visibility: visible; /* Ensure the delete button is visible */
+}
+
+.delete-folder-btn:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+
+#addFolderBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-top: auto; /* Keep button always at the bottom */
+    align-self: center; /* Center the button */
+}
+
+/* Styling for the View Calendar Button */
+.view-calendar-btn {
+    display: inline-block;
+    margin-bottom: 15px; /* Add some space below the button */
+    padding: 10px 20px; /* Add padding for a better touch area */
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Adjust font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transitions */
+    cursor: pointer;
+}
+
+.view-calendar-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}

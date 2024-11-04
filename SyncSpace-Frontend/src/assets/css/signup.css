@@ -1,0 +1,90 @@
+/* Reset default styles */
+body, h2, label, input, button, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #2711cb, #5b97ff); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%; /* Use full width of parent container */
+    max-width: 400px; /* Max width */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't add extra width */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below heading */
+    color: #3f51b5; /* Primary color */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the form contents */
+}
+
+label {
+    align-self: flex-start; /* Align labels to the left */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold labels */
+}
+
+input {
+    width: 100%; /* Full width of container */
+    max-width: 350px; /* Max width for consistency */
+    padding: 12px; /* Space inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Input font size */
+    box-sizing: border-box; /* Include padding in element's total width */
+    transition: border 0.3s; /* Smooth transition */
+}
+
+input:focus {
+    border-color: #3f51b5; /* Highlight border color on focus */
+    outline: none; /* Remove outline */
+}
+
+button {
+    background-color: #3f51b5; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 12px; /* Space inside button */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    font-size: 16px; /* Button font size */
+    width: 100%;
+    max-width: 350px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #303f9f; /* Darker button color on hover */
+}
+
+p {
+    margin-top: 20px; /* Space above paragraph */
+}
+
+a {
+    color: #3f51b5; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

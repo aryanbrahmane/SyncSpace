@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Tasks - SyncSpace</title>
+        <link rel="stylesheet" href="your-tasks.css">
+        <script src="your-tasks.js" defer></script>
+        
+        <!-- Add Font Awesome for the icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    
+<body>
+    <div class="container">
+        <header>
+            <h2>Your Tasks</h2>
+            <a href="index.html" class="home-icon">
+                <img src="homeicon.png" alt="Home">
+            </a>
+        </header>
+
+        <div class="main-content">
+            <!-- 1st Section: Tasks Calendar -->
+            <section class="tasks-calendar">
+                <h2>Tasks Calendar</h2>
+                <!-- New Button to View Calendar -->
+                <a href="calendar.html" class="view-calendar-btn">View Calendar</a>
+                <div id="calendar">Calendar Integration Coming Soon!</div>
+            </section>
+
+            <!-- 2nd Section: Quick Tasks -->
+            <section class="quick-task-section">
+              <h2>Quick Tasks</h2>
+              <form id="quickTaskForm">
+              <input type="text" id="quickTaskTitle" placeholder="Task Title" required>
+              <button type="submit" class="add-task-btn">Add Task</button>
+               
+               </form>
+
+               <ul id="quickTaskList" class="task-list">
+                <!-- Tasks will be dynamically added here -->
+               </ul>
+            </section>
+
+        </div>
+
+        <!-- 3rd Section: Your Task Folders -->
+        <section class="task-folders">
+            <h2>Your Task Folders</h2>
+            <div id="taskFolders">
+                <div class="folder">
+                    <div class="folder-banner">
+                        <img src="folder-banner.jpg" alt="Banner" class="banner-img">
+                    </div>
+                    <h3 contenteditable="true">Project A</h3>
+                    <p contenteditable="true">Manage tasks for Project A...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <form class="folder-task-form">
+                        <input type="text" placeholder="Add task to this folder" class="folder-task-input">
+                        <button type="submit">Add Task</button>
+                    </form>
+                    <ul class="folder-task-list">
+                        <!-- Folder-specific tasks will be added dynamically here -->
+                    </ul>
+                    <button class="edit-btn">Edit Folder</button>
+                    <button class="add-banner-btn">Add Banner</button>
+                    <button class="remove-banner-btn">Remove Banner</button>
+                    <button class="delete-folder-btn">Delete Folder</button>
+                    <!-- Hidden file input to upload banner -->
+                    <input type="file" class="banner-upload" accept="image/*" style="display: none;">
+                </div>
+                <button id="addFolderBtn">+ Add New Folder</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

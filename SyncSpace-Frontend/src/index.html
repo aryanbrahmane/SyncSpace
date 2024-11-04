@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncSpace - Home</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Add FontAwesome for hamburger menu icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">SyncSpace</a>
+        </div>
+        
+        <!-- Menu Button (aligned next to the logo) -->
+        <div id="menuContainer">
+            <button id="menuButton" class="menu-button">Menu</button>
+            <div id="dropdownMenu">
+                <a href="home.html">Home</a>
+                <a href="your-tasks.html">Your Tasks</a>
+                <a href="your-notes.html">Your Notes</a>
+                <a href="planners-lists.html">Planners & Lists</a>
+            </div>
+        </div>
+    
+        
+            <!-- Profile Section with Dropdown -->
+    <div id="profileItem" class="dropdown">
+    <div class="profile-icon-container">
+        <img src="proficon.png" alt="Profile Picture" class="profile-icon">
+        <span id="usernameDisplay" class="username-tooltip"></span>
+    </div>
+    <!-- Dropdown Menu -->
+    <div class="dropdown-content">
+        <a href="view-profile.html">View Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="about-us.html">About Us</a>
+        <a href="#" id="logoutLink">Log Out</a>
+    </div>
+    </div>
+
+            <!-- Login Link (visible when user is logged out) -->
+            <div id="loginItem">
+              <a href="login.html" class="login-button">Login</a>
+            </div>
+        </div>
+    </header>
+    
+
+  <!-- Main Content -->
+  <div class="hero">
+    <!-- New Section for post-login content -->
+  <div class="welcome-section" id="postLoginContent" style="display:none;">
+    
+    <p>Here are few tips to help you make the most of SyncSpace:</p>
+    <ul>
+      <li>Organize your tasks by priority.</li>
+      <li>Set schedules to stay on track.</li>
+      <li>Utilize notes for quick ideas and inspiration.</li>
+    </ul>
+  </div>
+    <h2 id="welcomeMessage" style="display:none;">Welcome <span id="userNameText"></span> to SyncSpace!</h2>
+    <p id="subMessage" style="display:none;">We're glad to have you onboard!</p>
+    <!-- New Section -->
+    <div class="intro-section">
+      <h3 class="intro-title">Your Productivity Awaits!</h3>
+      <p class="intro-description">SyncSpace is here to help you manage your tasks and notes seamlessly. Start organizing your life today!</p>
+    </div>
+    <button id="getStartedBtn">Get Started</button>
+  </div>
+
+  <script>
+    // Function to check login state on page load
+  function checkLoginStatus() {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+  const userName = localStorage.getItem('userName');
+
+  if (isLoggedIn && userName) {
+    // Hide "Get Started" button
+    document.getElementById('getStartedBtn').style.display = 'none';
+
+    // Show welcome message
+    document.getElementById('welcomeMessage').style.display = 'block';
+    document.getElementById('userNameText').textContent = userName;
+
+    // Hide login link and show profile icon with username
+    document.getElementById('loginItem').style.display = 'none';
+    document.getElementById('profileItem').style.display = 'inline-block';
+    // Show the menu button
+    document.getElementById('menuContainer').style.display = 'inline-block';
+    
+    // Update the username in the dropdown
+    document.getElementById('usernameDisplay').textContent = userName;
+    // Show the new post-login content
+    document.getElementById('postLoginContent').style.display = 'block'; // Show new content
+
+  } else {
+    // If not logged in, show login and hide profile
+    document.getElementById('loginItem').style.display = 'inline-block';
+    document.getElementById('profileItem').style.display = 'none';
+    document.getElementById('menuContainer').style.display = 'none'; // Hide the menu button
+  }
+}
+
+    // Call the function when the page loads
+    window.onload = checkLoginStatus;
+
+    // Simulate login/signup process and store login state
+    document.getElementById('getStartedBtn').addEventListener('click', function() {
+      window.location.href = 'login.html'; // You can replace this with an actual login/signup form
+
+      if (userName) {
+        // Store login state and username in localStorage
+        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('userName', userName);
+
+        // Redirect to the home page (simulate post-login)
+        window.location.href = 'index.html';
+      }
+    });
+
+    // Logout functionality
+    document.getElementById('logoutLink').addEventListener('click', function() {
+  // Clear login state from localStorage
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('userName');
+
+  // Redirect to home or reload the page
+    window.location.href = 'index.html';
+  });
+  </script>
+
+<script>
+   // Toggle dropdown visibility
+   const menuButton = document.getElementById("menuButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        menuButton.addEventListener("click", function () {
+            // Toggle display of dropdown menu
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener("click", function (event) {
+            if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = "none";
+            }
+        });
+
+</script>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>SyncSpace</h4>
+        <p>Organize your tasks and notes efficiently with SyncSpace.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: support@syncspace.com</p>
+        <p>Phone: +123-456-7890</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SyncSpace. All rights reserved.</p>
+    </div>
+</footer>
+    
+</body>
+</html>

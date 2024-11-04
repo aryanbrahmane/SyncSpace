@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncSpace - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">SyncSpace</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Task Manager Section -->
+  <section class="dashboard-section">
+    <h2>Your Tasks</h2>
+    <div class="task-container">
+      <button class="add-task-btn">Add Task</button>
+      <!-- Tasks will be dynamically added here -->
+      <div class="task-list">
+        <!-- Sample task -->
+        <div class="task">
+          <h3>Finish Project</h3>
+          <p>Due: 2024-10-20</p>
+          <button>Edit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note-Taking Section -->
+  <section class="note-section">
+    <h2>Your Notes</h2>
+    <button class="add-note-btn">Add Note</button>
+    <!-- Notes will be dynamically added here -->
+    <div class="note-list">
+      <div class="note">
+        <h3>Meeting Notes</h3>
+        <p>Here are some notes from today's meeting...</p>
+        <button>Edit</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

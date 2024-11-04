@@ -1,0 +1,231 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-container h1 {
+    margin-left: 10px;
+    font-size: 1.8rem;
+}
+
+.home-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Main Section Styling */
+main {
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+/* Template Section Styles */
+.template-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.add-folder-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-folder-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Folder Container with Scroll for more than 3 folders */
+/* Folder Container */
+.folder-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow folders to wrap to the next line */
+    gap: 1.5rem; /* Maintain spacing between folders */
+    max-height: 300px; /* Limit the height */
+    overflow-y: auto; /* Enable vertical scrollbar if needed */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+
+/* Folder Styles */
+/* Folder Styles */
+.folder {
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 250px; /* Retain the width */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px; /* Limit height for tasks scroll */
+    overflow-y: auto; /* Scrollbar after 3 tasks */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+
+.folder h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.folder-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.folder-controls .icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    transition: color 0.3s;
+}
+
+.folder-controls .icon:hover {
+    color: #2c3e50;
+}
+
+/* Task Styles */
+.task-list {
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.task {
+    background-color: #e1e1e1;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Changed to column for proper alignment */
+}
+
+.task .task-name {
+    font-size: 1.4rem; /* Larger font size */
+    color: #333;
+    flex: 1; /* Allow the name to grow */
+}
+.task-name {
+    width: 150px; /* Extend the length of item box */
+}
+.task-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between icons and checkbox */
+    margin-top: 5px; /* Space above icons */
+}
+
+/* Adjusting the input fields */
+.task-quantity,
+.task-time,
+.task-amount {
+    margin-left: 5px;
+}
+
+.task-quantity {
+    width: 30px; /* Small size for quantity input */
+}
+
+.task-time {
+    width: 100px; /* Smaller width for time input */
+}
+
+.task-amount {
+    width: 60px; /* Smaller width for cost input */
+}
+
+.task-controls .icon {
+    margin-left: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.task-controls .icon:hover {
+    color: #3498db;
+}
+
+/* Scroll Styling */
+.folder-container::-webkit-scrollbar,
+.folder::-webkit-scrollbar {
+    width: 8px;
+}
+
+.folder-container::-webkit-scrollbar-thumb,
+.folder::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 4px;
+}
+
+.folder-container::-webkit-scrollbar-thumb:hover,
+.folder::-webkit-scrollbar-thumb:hover {
+    background-color: #95a5a6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .folder-container {
+        justify-content: center;
+    }
+}
+
+/* Additional styling for Financial Planner */
+.expense-input {
+    width: 200px; /* Make text box larger */
+}
+
+.total-expense {
+    font-size: 1.5rem; /* Slightly larger for emphasis */
+    margin-top: 10px;
+    color: #e74c3c; /* Red color for visibility */
+    font-weight: bold; /* Make it bold */
+}
+.task-checkbox {
+    display: none; /* Remove tick box from Financial Planner */
+}

@@ -1,0 +1,212 @@
+/* Reset default styles */
+body, h1, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+  
+body {
+    background-color: #f4f4f9;
+}
+  
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+h1 {
+    margin-left: 20px;
+    font-size: 24px;
+}
+  
+.home-icon {
+    width: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+  
+main {
+    padding: 20px;
+    display: flex;
+}
+  
+.sidebar {
+    width: 200px;
+    margin-right: 20px;
+}
+  
+.add-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+  
+.add-btn:hover {
+    background-color: #303f9f;
+}
+  
+.folders-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.folder {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px; /* Increased width for better visibility */
+    max-height: 400px; /* Increased maximum height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.folder h2 {
+    font-size: 18px; /* Increase folder title size */
+    margin-bottom: 10px; /* Spacing below the title */
+}
+  
+.folder-notes {
+    width: 100%; /* Full width inside folder */
+    height: auto; /* Auto height to fit new text area */
+    max-height: 250px; /* Increase maximum height for scrollable area */
+    overflow-y: auto; /* Vertical scroll for large note lists */
+    margin-top: 10px; /* Spacing from the folder header */
+    border: 1px solid #ccc; /* Border for distinction */
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.folder-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+  
+.folder-icons img {
+    width: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+  
+.note {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Ensure long text wraps */
+    overflow-wrap: break-word;
+    white-space: normal; /* Change from pre-wrap to normal to allow wrapping */
+    width: 100%; /* Take full width of container */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row; /* Ensure icons are aligned next to the note */
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.note-text {
+    flex: 1; /* Allows the text to take most of the space */
+    margin-right: 10px; /* Adds space between text and icons */
+}
+
+/* Style for the text area */
+.note-text-area {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    max-height: 150px; /* Maximum height */
+    border: 2px solid #3f51b5; /* Add border color */
+    padding: 10px; /* Padding for text area */
+    box-sizing: border-box; /* Include padding in width/height */
+    resize: none; /* Disable manual resizing */
+    font-size: 14px; /* Font size */
+    background-color: #f9f9f9; /* Light background color */
+}
+  
+.note-icons {
+    display: flex;
+    gap: 5px; /* Space between the icons */
+}
+  
+.note input {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    width: 100%; /* Use full width for note input */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+  
+.note-icons img {
+    width: 16px;
+    cursor: pointer;
+}
+  
+/* Add scrollbar for folders */
+.folder::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.folder::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+  
+.folder::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.folder-input {
+    width: 100%; /* Full width for the input field */
+    border: 1px solid #3f51b5; /* Border color */
+    padding: 5px; /* Padding for input field */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for input */
+}
+
+.folder-name-input {
+    border: none; /* Remove the border */
+    background: transparent; /* Keep it transparent */
+    font-size: 18px; /* Font size for folder name */
+    width: 100%; /* Full width */
+    padding: 0; /* Remove padding */
+    outline: none; /* Remove outline */
+    text-align: center; /* Center the text */
+}
+
+.note-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.delete-note-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.note-text-area {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
