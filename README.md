@@ -1,1 +1,2 @@
-"# Mini-Proj-SyncSpace" 
+# SyncSpace
+SE MINI PROJECT
