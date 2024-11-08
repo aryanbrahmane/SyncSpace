@@ -6,7 +6,7 @@ body, h2, label, input, button, p {
 }
 
 body {
-    background: linear-gradient(to right, #2711cb, #5b97ff); /* Gradient background */
+    background: linear-gradient(to right, #3d28dd, #5b97ff); /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
